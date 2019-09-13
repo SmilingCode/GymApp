@@ -1,33 +1,234 @@
-.App {
+/*
+  main wrapper
+*/
+.header {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #6200ee;
+  padding: 5px;
+}
+
+.personalInfo {
+  position: fixed;
+  top: 96px;
+  left: 0;
+  width: 35%;
+  background: #F5F5F5;
+  height: 100%;
+}
+
+.menu {
+  position: fixed;
+  top: 96px;
+  left: 35%;
+  width: 65%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+/*
+  header
+*/
+.form {
+
+}
+
+.icon {
+  position: absolute;
+  margin: 10px;
+}
+
+.form-control {
+  padding-left: 40px !important;
+}
+
+.time-control {
   text-align: center;
+  color: #ffffff;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.time-control a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.time-control a:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.date {
+  font-size: 32px;
+  margin: 0 90px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*
+  user panel
+*/
+.user-info {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.weight {
+  position: absolute;
+  right: 0;
+}
+
+.height {
+  position: absolute;
+  left: 0;
+}
+
+.circle-block {
+  background: #7A7A7A;
+  border-radius: 100%;
+  width: 56px;
+  height: 56px;
+  text-align: center;
+  color: #ffffff;
+  padding: 7px;
+  top: 20px;
+}
+
+.circle-img {
+  border-radius: 100%;
+  width: 92px;
+  height: 92px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.c-font {
+  font-size: 20px;
+  margin: 0;
+}
+
+.c-unit {
+  font-size: 12px;
+}
+
+.bg-purple {
+  background: #6200ee !important;
+}
+
+.percentage {
+  margin-left: 22%;
+  color: #00000099;
+}
+
+.consumed {
+  padding-left: 15px;
+}
+
+.consumed h6 {
+  font-size: 12px;
+  color: #00000099;
+}
+
+.goal {
+  text-align: right;
+  padding-right: 15px;
+}
+
+.goal h6 {
+  font-size: 12px;
+  color: #00000099;
+}
+
+.meals {
+  margin-top: 20px;
+}
+
+.meals div {
+  text-align: center;
+  padding: 0;
+  margin: 4px;
+}
+
+.meals div:first-child {
+  padding-left: 15px;
+}
+
+.meals div p {
+  font-size: 12px;
+  color: #00000099;
+}
+
+.meals div h5 {
+  margin: 0;
+}
+
+/*
+  Food list
+*/
+.food-item {
+  margin-top: 10px;
+  height: 48px;
+}
+
+.food-item div {
+  height: 48px;
+}
+
+.food-item p {
+  font-size: 12px;
+}
+
+.food-image {
+  width: 7%;
+  margin-left: 30px;
+}
+
+.food-info {
+  width: 87%;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.food-name {
+  width: 40%;
+  float: left;
+}
+
+.food-energy {
+  text-align: right;
+  padding-right: 25px;
+  float: right;
+}
+
+/*
+  Button
+*/
+.addFood {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.addFood a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.addFood a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.plusBtn {
+  border-radius: 100%;
+  background: #6200ee;
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-size: 22px;
 }
