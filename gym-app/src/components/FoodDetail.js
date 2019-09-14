@@ -6,16 +6,12 @@ class FoodDetail extends React.Component {
         this.state = {
             serving: 1,
             grams: 0,
-            calories: 0
+            calories: 0,
+            meal_type: 'Breakfast'
         }
-        this.updateUserInfo = this.updateUserInfo.bind(this);
-    }
-
-    componentDidMount() {
-        this.setState({
-            grams: this.props.currentFoodDetail.grams,
-            calories: this.props.currentFoodDetail.calories
-        })
+        this.storeUserInfo = this.storeUserInfo.bind(this);
+        this.handleMealChange = this.handleMealChange.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     increaseServing() {
@@ -36,21 +32,60 @@ class FoodDetail extends React.Component {
         }
     }
 
-    updateUserInfo() {
+    handleMealChange(e) {
+        const {name, value} = e.target;
 
+        this.setState({
+            [name]: value
+        })
+    }
+
+    storeUserInfo() {
+        const foodDetails = {
+            food_name: this.props.currentFoodDetail.foodName,
+            serving_unit: this.props.currentFoodDetail.unit,
+            totalGrams: this.state.grams,
+            totalCalories: this.state.calories,
+            thumb: this.props.currentFoodDetail.image,
+            meal_type: this.state.meal_type,
+            serving_size: this.state.serving
+        }
+
+        this.props.userFoodDetail(foodDetails)
+        this.handleReset();
+        this.props.setQueryState(false);
+    }
+
+    handleReset() {
+        setTimeout(() => {
+            this.setState({
+                serving: 1,
+                grams: 0,
+                calories: 0,
+                meal_type: 'Breakfast'
+            });
+        }, 1000);
     }
 
     render() {
+
         return (
             <div className="modal fade" aria-hidden="true" role="dialog" id="foodDetail">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
                             <div className="modal-img">
-                                <img src="uthappizza.png" width="64" height="64" alt="uthappizza"/><br />
-                                <h5 className="modal-title">{this.props.currentFoodDetail.foodName}</h5>
+                                <img
+                                    src={ this.props.currentFoodDetail.image }
+                                    width="64"
+                                    height="64"
+                                    alt="uthappizza"
+                                /><br />
+                                <h5 className="modal-title">
+                                    { this.props.currentFoodDetail.foodName }
+                                </h5>
                             </div>
-                            <button className="close" data-dismiss="modal">
+                            <button className="close" data-dismiss="modal" onClick={this.handleReset}>
                                 &times;
                             </button>
                         </div>
@@ -64,18 +99,20 @@ class FoodDetail extends React.Component {
                                             <p>{ this.state.serving }.0</p>
                                         </div>
                                         <div className="icons">
-                                            <i className="fa fa-chevron-up" onClick={() => this.increaseServing()}></i>
-                                            <i className="fa fa-chevron-down" onClick={() => this.decreaseServing()}></i>
+                                            <i className="fa fa-chevron-up"
+                                                onClick={() => this.increaseServing()}></i>
+                                            <i className="fa fa-chevron-down"
+                                                onClick={() => this.decreaseServing()}></i>
                                         </div>
                                     </div>
                                     <span>{this.props.currentFoodDetail.unit}</span>
                                 </div>
                                 <div className="grams">
-                                    <h5>{ this.state.grams }</h5>
+                                    <h5>{ this.state.grams ? this.state.grams : this.props.currentFoodDetail.grams }</h5>
                                     <p>grams</p>
                                 </div>
                                 <div className="calories">
-                                    <h5>{ this.state.calories }</h5>
+                                    <h5>{ this.state.calories ? this.state.calories : this.props.currentFoodDetail.calories }</h5>
                                     <p>calories</p>
                                 </div>
                             </div>
@@ -83,16 +120,18 @@ class FoodDetail extends React.Component {
                             <div className="itemCategory">
                                 <h5>ADD TO TODAY</h5>
                                 <span className="custom-dropdown">
-                                    <select>
-                                        <option>Breakfast</option>
-                                        <option>Lunch</option>
-                                        <option>Dinner</option>
-                                        <option>Snack</option>
+                                    <select
+                                        name="meal_type"
+                                        value={this.state.meal_type}
+                                        onChange={this.handleMealChange}>
+                                        <option value="Breakfast">Breakfast</option>
+                                        <option value="Lunch">Lunch</option>
+                                        <option value="Dinner">Dinner</option>
+                                        <option value="Snack">Snack</option>
                                     </select>
                                 </span>
                             </div>
-
-                            <button onClick={this.updateUserInfo} className="addButton">ADD</button>
+                            <button data-dismiss="modal" onClick={this.storeUserInfo} className="addButton">ADD</button>
                         </div>
                     </div>
                 </div>

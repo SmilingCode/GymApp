@@ -26,11 +26,13 @@ class SearchList extends Component {
     }
 
     postDetails(foodData) {
+        //console.log(foodData)
         const currentFoodInfo = {
             foodName: foodData.foods[0].food_name,
             grams: Math.round(foodData.foods[0].serving_weight_grams),
             calories: Math.round(foodData.foods[0].nf_calories),
-            unit: foodData.foods[0].serving_unit
+            unit: foodData.foods[0].serving_unit,
+            image: foodData.foods[0].photo.thumb
         }
 
         this.props.currentFoodInfo(currentFoodInfo);

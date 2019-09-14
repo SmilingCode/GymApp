@@ -5,10 +5,6 @@ const barHeight = {
     margin: '10px'
 };
 
-const barWidth = {
-    width: '25%'
-};
-
 class PersonalInfo extends Component {
 
     render() {
@@ -32,7 +28,8 @@ class PersonalInfo extends Component {
             breakfast = 0,
             lunch = 0,
             dinner = 0,
-            snack = 0;
+            snack = 0,
+            percentage = 0;
         let currentPageId = this.props.currentPageId;
 
         if (currentPageId === 0) {
@@ -41,6 +38,25 @@ class PersonalInfo extends Component {
             lunch = 0;
             dinner = 0;
             snack = 0;
+
+            let userFoodList = this.props.userFoodList;
+            console.log(userFoodList)
+
+            if (userFoodList) {
+                userFoodList.map((li, index) => {
+                    if (li.meal_type === 'Breakfast') {
+                        breakfast += li.totalCalories;
+                    } else if (li.meal_type === 'Lunch') {
+                        lunch += li.totalCalories;
+                    } else if (li.meal_type === 'Dinner') {
+                        dinner += li.totalCalories;
+                    } else if (li.meal_type === 'Snack') {
+                        snack += li.totalCalories;
+                    }
+
+                    totalConsumed += li.totalCalories;
+                })
+            }
         } else {
             let list = this.props.mockData.data_points[currentPageId].intake_list;
 
@@ -48,7 +64,7 @@ class PersonalInfo extends Component {
                 let sum = li.nf_calories * li.serving_size * li.serving_qty;
 
                 if (li.meal_type === 'breakfast') {
-                    breakfast = sum;
+                    breakfast += sum;
                 } else if (li.meal_type === 'lunch') {
                     lunch += sum;
                 } else if (li.meal_type === 'dinner') {
@@ -59,7 +75,20 @@ class PersonalInfo extends Component {
 
                 totalConsumed += sum;
             });
+
+
         }
+
+        let ratio = Math.round((totalConsumed/1500)*100);
+        percentage = (ratio > 100) ? 100 : parseInt(ratio);
+
+        const textMargin = {
+            marginLeft: percentage < 10 ? (percentage + 5) + '%' : (percentage - 10) + '%'
+        }
+
+        const barWidth = {
+            width: percentage + '%'
+        };
 
         return (
             <div className="personalInfo">
@@ -82,7 +111,9 @@ class PersonalInfo extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-12 text-center">{this.props.mockData.first_name} {this.props.mockData.last_name}</div>
+                    <div className="col-sm-12 text-center">
+                        {this.props.mockData.first_name} {this.props.mockData.last_name}
+                    </div>
                 </div>
                 <hr />
                 <div className="row justify-content-between">
@@ -102,9 +133,15 @@ class PersonalInfo extends Component {
                 <div className="row">
                     <div className="col-sm-12">
                         <div className="progress" style={barHeight}>
-                            <div className="progress-bar bg-purple" role="progressbar" style={barWidth} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div className="progress-bar bg-purple"
+                                role="progressbar"
+                                style={barWidth}
+                                aria-valuenow={percentage}
+                                aria-valuemin="0"
+                                aria-valuemax="100">
+                            </div>
                         </div>
-                        <div className="percentage">25%</div>
+                        <div className="percentage" style={textMargin}>{percentage}</div>
                     </div>
                 </div>
                 <div className="row justify-content-center meals">

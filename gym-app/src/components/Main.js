@@ -5,7 +5,7 @@ import Menu from './Menu';
 import AddFood from './AddFood';
 import FoodDetail from './FoodDetail';
 import { connect } from 'react-redux';
-import { get_query_state, get_query_res, page_move_left, page_move_right, current_food_detail } from '../redux/actions/index';
+import { get_query_state, get_query_res, page_move_left, page_move_right, current_food_detail, user_food_detail } from '../redux/actions/index';
 
 const mapStateToProps = (state) => {
     return {
@@ -19,13 +19,11 @@ const mapDispatchToProps = (dispatch) => ({
     getQueryRes: (queryRes) => dispatch(get_query_res(queryRes)),
     pageMoveLeft: () => dispatch(page_move_left()),
     pageMoveRight: () => dispatch(page_move_right()),
-    currentFoodInfo: (currentFoodDetails) => dispatch(current_food_detail(currentFoodDetails))
+    currentFoodInfo: (currentFoodDetails) => dispatch(current_food_detail(currentFoodDetails)),
+    userFoodDetail: (foodDetail) => dispatch(user_food_detail(foodDetail))
 })
 
 class Main extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         return (
@@ -44,14 +42,20 @@ class Main extends React.Component {
                     isShowList={this.props.queryReducer.queryState}
                     mockData={this.props.mockReducer}
                     currentPageId={this.props.queryReducer.pageId}
+                    userFoodList={this.props.queryReducer.userFoodList}
                 />
                 <Menu
                     isShowList={this.props.queryReducer.queryState}
                     mockData={this.props.mockReducer}
                     currentPageId={this.props.queryReducer.pageId}
+                    userFoodList={this.props.queryReducer.userFoodList}
                 />
                 <AddFood />
-                <FoodDetail currentFoodDetail={this.props.queryReducer.currentFoodInfo} />
+                <FoodDetail
+                    currentFoodDetail={this.props.queryReducer.currentFoodInfo}
+                    userFoodDetail={this.props.userFoodDetail}
+                    setQueryState={this.props.getQueryState}
+                />
             </div>
         )
     }

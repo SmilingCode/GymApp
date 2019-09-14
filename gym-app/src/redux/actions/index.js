@@ -30,3 +30,10 @@ export const current_food_detail = (currentFoodInfo) => {
         payload: currentFoodInfo
     }
 }
+
+export const user_food_detail = (foodDetail) => {
+    return {
+        type: 'STORE_USER_FOOD',
+        payload: foodDetail
+    }
+}

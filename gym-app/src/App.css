@@ -278,7 +278,7 @@ div.searchBox form {
   font-weight: 500;
 }
 
-.common div:not(:last-child) div.search-name {
+.common a:not(:last-child) div.search-name {
   border-bottom: 1px solid #d3d3d3;
   padding-bottom: 16px;
 }
@@ -495,7 +495,7 @@ div.itemCategory h5 {
 }
 
 .modal-dialog {
-  max-width: 313px !important;
+  max-width: 323px !important;
 }
 
 .modal-header {
