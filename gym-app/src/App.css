@@ -26,14 +26,18 @@
   left: 35%;
   width: 65%;
   height: 100%;
-  overflow-y: scroll;
+  overflow-x: scroll;
+  margin-top: -5px;
 }
 
 /*
   header
 */
-.form {
-
+div.searchBox {
+  z-index: 2;
+}
+div.searchBox form {
+  position: relative;
 }
 
 .icon {
@@ -48,21 +52,7 @@
 .time-control {
   text-align: center;
   color: #ffffff;
-}
-
-.time-control a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.time-control a:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.date {
   font-size: 32px;
-  margin: 0 90px;
 }
 
 /*
@@ -168,11 +158,7 @@
   Food list
 */
 .food-item {
-  margin-top: 10px;
-  height: 48px;
-}
-
-.food-item div {
+  margin-top: 12px;
   height: 48px;
 }
 
@@ -183,15 +169,20 @@
 .food-image {
   width: 7%;
   margin-left: 30px;
+  display: flex;
+  align-items: center;
+  height: 48px;
 }
 
 .food-info {
-  width: 87%;
+  width: 84%;
+  height: 54px;
+  margin-left: 15px;
   border-bottom: 1px solid #d3d3d3;
 }
 
 .food-name {
-  width: 40%;
+  width: 50%;
   float: left;
 }
 
@@ -231,4 +222,287 @@
   height: 100%;
   display: block;
   font-size: 22px;
+}
+
+/*
+  searchList
+*/
+.cover {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.searchList {
+  position: fixed;
+  left: 34%;
+  top: 8%;
+  width: 32%;
+  height: 91%;
+  background: #ffffff;
+  z-index: 2;
+  border-radius: 1%;
+  overflow-x: scroll;
+
+}
+
+.common {
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 10px;
+}
+
+.searchItem {
+  width: 100%;
+  margin-top: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search-image {
+  width: 13%;
+  float: left;
+  margin-left: 10px;
+}
+
+.search-name {
+  width: 79%;
+  float: left;
+  margin: 14px 0 0 13px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.common div:not(:last-child) div.search-name {
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 16px;
+}
+
+.branded div.search-name {
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 10px;
+}
+
+.searchList h5 {
+  color: #00000099;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.search-name h6 {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+}
+
+.search-name span {
+  font-size: 12px;
+  color: #00000099;
+}
+
+/*
+  carousel-control-prev
+*/
+.carousel-control-next, .carousel-control-prev {
+  opacity: 1 !important;
+}
+
+/*
+  foodDetail
+*/
+.foodDetail {
+  position: fixed;
+  left: 33%;
+  top: 16%;
+  width: 34%;
+  height: 66%;
+  border-radius: 1%;
+  overflow: hidden;
+}
+
+.itemVals {
+  width: 100%;
+  height: 30%;
+  overflow: hidden;
+}
+
+.savings, .grams, .calories {
+  position: relative;
+  float: left;
+}
+
+.itemVals div.savings {
+
+}
+
+.itemVals div.grams {
+  margin-left: 16px;
+  margin-top: 7px;
+  text-align: right;
+}
+
+.itemVals h5 {
+  margin: 0;
+}
+
+.itemVals div.calories {
+  margin-left: 20px;
+  margin-top: 7px;
+  text-align: right;
+}
+
+.selection {
+  display: flex;
+  width: 120px;
+  height: 56px;
+  border-radius: 4px 4px 0 0;
+  background: #e8e8e8;
+  border-bottom: 2px solid #6200ee;
+}
+
+.selection div.icons {
+  margin: 8px 0 0 23px;
+  color: #00000099;
+  width: 10px;
+  line-height: 1;
+}
+
+div.savingVal h6 {
+  margin: 7px 0 0 16px;
+  font-size: 14px;
+  color: #6200ee;
+}
+
+div.itemVals div.savingVal p {
+  margin-left: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000de;
+}
+
+div.itemVals p {
+  font-size: 12px;
+  color: #00000099;
+}
+
+div.itemVals h5 {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+div.savings span {
+  font-size: 12px;
+  color: #6200ee;
+  margin-left: 15px;
+  font-weight: 500;
+  display: block;
+  width: 120px;
+}
+
+div.itemCategory h5 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #00000099;
+  letter-spacing: 2px;
+}
+
+/*
+  custom select
+*/
+
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px; /* demo only */
+}
+
+.custom-dropdown select {
+  background-color: #e8e8e8;
+  color: #00000099;
+  font-size: inherit;
+  padding: .5em;
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 10px;
+  width: 17.4em;
+  font-weight: 600;
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdown::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.custom-dropdown::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-dropdown select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+
+.custom-dropdown select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.addButton {
+  background: #6200ee;
+  width: 72px;
+  height: 36px;
+  border-radius: 4px;
+  float: right;
+  margin-top: 12px;
+  font-weight: 500;
+  letter-spacing: 1.25px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.icons i.fa {
+  font-size: 10px !important;
+  cursor: pointer;
+}
+
+.modal {
+  top: 15% !important;
+}
+
+.modal-dialog {
+  max-width: 313px !important;
+}
+
+.modal-header {
+  border: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.modal-body {
+  padding-top: 0 !important;
 }
