@@ -14,6 +14,7 @@ class Header extends Component {
         this.searchListShow = this.searchListShow.bind(this);
     }
 
+    // get the response data based on user input
     onSearch(e) {
         const { name, value } = e.target;
 
@@ -38,6 +39,7 @@ class Header extends Component {
         .catch(err => console.log(err.message));
     }
 
+    // store isShowSearchList state(show: true, hide: false)
     searchListShow(searchList) {
         // query response 0 item
         if (searchList.total === 0) {
@@ -45,33 +47,28 @@ class Header extends Component {
         // input box is empty
         } else if(!this.state.query) {
             this.props.getQueryState(false);
-            // this.setState({
-            //     queryState: false
-            // })
         } else {
             this.props.getQueryState(true);
-            // this.setState({
-            //     queryState: true
-            // })
         }
         this.props.getQueryRes(searchList)
     }
 
+    // change the state value of currentPageId(previous Day)
     moveLeft() {
-        //const crtIndex = $('div.active').index();
         if (this.props.currentPageId < 2) {
             this.props.pageMoveLeft();
         }
     }
 
+    // change the state value of currentPageId(next Day)
     moveRight() {
-        //const crtIndex = $('div.active').index();
         if (this.props.currentPageId > 0) {
             this.props.pageMoveRight();
         }
     }
 
     render() {
+        // show relative components based on the isShowSearchList state
         let isDisplay = {
             display: 'none'
         };
@@ -85,7 +82,7 @@ class Header extends Component {
                 display: 'none'
             };
         }
-
+        // get the date of two days ago from now
         let date = new Date();
         let beforeYesterday_mill = date.getTime() - 2000*60*60*24;
 

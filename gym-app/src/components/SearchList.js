@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 
+// My addId and appKey for search and get the food detail
 const appId = "9fafc24e";
 const appKey = "b251a4845a90a6c1a47f2b9bc8e0f2b4";
 
 class SearchList extends Component {
-
+    // get details of user current clicking common item
     getCommonDetails(index) {
         const common_food_name = this.props.queryRes.common[index].food_name;
         let queryData = {
@@ -24,7 +25,7 @@ class SearchList extends Component {
         .then(commonData => this.postDetails(commonData))
         .catch(err => console.log(err.message));
     }
-
+    // store response data in our redux state
     postDetails(foodData) {
         //console.log(foodData)
         const currentFoodInfo = {
@@ -37,7 +38,7 @@ class SearchList extends Component {
 
         this.props.currentFoodInfo(currentFoodInfo);
     }
-
+    // get details of user current clicking brand item
     getBrandDetails(index) {
         const nix_item_id = this.props.queryRes.branded[index].nix_item_id;
 
@@ -55,6 +56,7 @@ class SearchList extends Component {
     }
 
     render() {
+        // common food list
         let commonList;
         if (this.props.queryRes.common) {
             commonList = this.props.queryRes.common.map((list, index) => {
@@ -78,6 +80,7 @@ class SearchList extends Component {
                 }
             });
         }
+        // brand food list
         let brandedList;
         if (this.props.queryRes.branded) {
             brandedList = this.props.queryRes.branded.map((list, index) => {
