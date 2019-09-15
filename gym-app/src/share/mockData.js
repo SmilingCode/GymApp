@@ -125,6 +125,7 @@ export const diet = {
                    "serving_unit": "oz",
                    "serving_qty": 4,
                    "nf_calories": 110,
+                   "serving_weight_grams": 34,
                    "serving_size" : 1,
                    "meal_type": "dinner",
                    "thumb": "https://d1r9wva3zcpswd.cloudfront.net/5c04d53ff01a65ec7b2089dd.jpeg"

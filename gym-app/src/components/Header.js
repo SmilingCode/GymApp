@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import SearchList from './SearchList';
 
 class Header extends Component {
     constructor(props) {
@@ -109,7 +108,7 @@ class Header extends Component {
                         </div>
                         <div className="col-sm"></div>
                     </div>
-                    <div className="row">
+                    <div className="row date">
                         <div className="col-sm"></div>
                         <div className="col-sm">
 
@@ -132,20 +131,19 @@ class Header extends Component {
                                     </div>
                                 </div>
                               </div>
-                              <a className="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev" onClick={() => this.moveLeft()}>
-                                <span aria-hidden="true">&lt;</span>
-                              </a>
-                              <a className="carousel-control-next" href="#mycarousel" role="button" data-slide="next" onClick={() => this.moveRight()}>
-                                <span>&gt;</span>
-                              </a>
+
+
                             </div>
                         </div>
                         <div className="col-sm"></div>
                     </div>
                 </div>
-                {
-                    this.props.isShowList ? <SearchList queryRes={this.props.queryRes} currentFoodInfo={this.props.currentFoodInfo} /> : <div></div>
-                }
+                <a className="carousel-control-next" href="#mycarousel" role="button" data-slide="next" onClick={() => this.moveRight()}>
+                    <span>&gt;</span>
+                </a>
+                <a className="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev" onClick={() => this.moveLeft()}>
+                    <span aria-hidden="true">&lt;</span>
+                </a>
             </div>
         );
     }

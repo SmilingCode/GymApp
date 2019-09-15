@@ -35,12 +35,12 @@ class Menu extends Component {
                             </div>
                             <div className="food-info">
                                 <div className="food-name">
-                                    <span>{li.food_name}</span>
-                                    <p>{li.serving_size} {li.serving_unit} ({li.totalGrams})</p>
+                                    <span className="bigger-font">{li.food_name}</span>
+                                    <p className="sub-font">{li.serving_size} {li.serving_unit} ({li.totalGrams + 'g'})</p>
                                 </div>
                                 <div className="food-energy">
-                                    <span>{li.totalCalories} cal</span>
-                                    <p>{li.meal_type}</p>
+                                    <span className="bigger-font">{li.totalCalories} cal</span>
+                                    <p className="sub-font">{li.meal_type}</p>
                                 </div>
                             </div>
                         </div>
@@ -58,12 +58,12 @@ class Menu extends Component {
                         </div>
                         <div className="food-info">
                             <div className="food-name">
-                                <span>{li.food_name}</span>
-                                <p>{li.serving_size} {li.serving_unit} ({li.serving_weight_grams})</p>
+                                <span className="bigger-font">{li.food_name}</span>
+                                <p className="sub-font">{li.serving_size} {li.serving_unit} ({li.serving_weight_grams + 'g'})</p>
                             </div>
                             <div className="food-energy">
-                                <span>{li.serving_size * li.nf_calories} cal</span>
-                                <p>{li.meal_type}</p>
+                                <span className="bigger-font">{li.serving_size * li.nf_calories} cal</span>
+                                <p className="sub-font">{li.meal_type}</p>
                             </div>
                         </div>
                     </div>

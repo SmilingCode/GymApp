@@ -92,13 +92,13 @@ class PersonalInfo extends Component {
             <div className="personalInfo">
                 <div className="cover" style={isDisplay}></div>
                 <div className="row user-info">
-                    <div className="col-2 col-sm-4">
+                    <div className="col-2 col-sm-4 min-weight">
                         <div className="circle-block weight">
                             <h6 className="c-font">{this.props.mockData.weight_kg}</h6>
                             <p className="c-unit">kg</p>
                         </div>
                     </div>
-                    <div className="col-2 col-sm-4">
+                    <div className="col-2 col-sm-4 img">
                         <img src="portrait.jpg" width="92" height="92" className="circle-img" alt=""/>
                     </div>
                     <div className="col-2 col-sm-4">
@@ -107,19 +107,20 @@ class PersonalInfo extends Component {
                             <p className="c-unit">cm</p>
                         </div>
                     </div>
-                    <div className="col-4 col-sm-12 text-center">
-                        {this.props.mockData.first_name} {this.props.mockData.last_name}
+
+                    <div className="col-4 col-sm-12 text-center name">
+                        <span className="first_name">{this.props.mockData.first_name}</span> <span className="d-none d-sm-block last_name">{this.props.mockData.last_name}</span>
                     </div>
                 </div>
                 <hr />
-                <div className="row justify-content-between">
-                    <div className="col-sm-5">
+                <div className="row justify-content-between daily-panel">
+                    <div className="col-5 col-sm-5">
                         <div className="consumed">
                             <h4>{Math.round(totalConsumed)} cal</h4>
                             <h6>consumed</h6>
                         </div>
                     </div>
-                    <div className="col-sm-5">
+                    <div className="col-7 col-sm-5">
                         <div className="goal">
                             <h4>{this.props.mockData.daily_goal} cal</h4>
                             <h6>daily goal</h6>
@@ -127,7 +128,7 @@ class PersonalInfo extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-12">
+                    <div className="col-11 col-sm-12">
                         <div className="progress" style={barHeight}>
                             <div className="progress-bar bg-purple"
                                 role="progressbar"
@@ -137,10 +138,10 @@ class PersonalInfo extends Component {
                                 aria-valuemax="100">
                             </div>
                         </div>
-                        <div className="percentage" style={textMargin}>{percentage}</div>
+                        <div className="percentage" style={textMargin}>{percentage + '%'}</div>
                     </div>
                 </div>
-                <div className="row justify-content-center meals">
+                <div className="row meals">
                     <div className="col-sm-3">
                         <h5>{ Math.round(breakfast) }</h5>
                         <p>Breakfast</p>
