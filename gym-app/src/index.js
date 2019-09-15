@@ -9,13 +9,14 @@ import { createStore } from 'redux';
 import allReducers from './redux/reducers/index';
 import { Provider } from 'react-redux';
 
+// Create Redux store
 let store = createStore(
     allReducers,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-// Display it in the console
-store.subscribe(() => console.log(store.getState()));
+// Display our states in the console
+//store.subscribe(() => console.log(store.getState()));
 
 ReactDOM.render(
     <Provider store={store}>

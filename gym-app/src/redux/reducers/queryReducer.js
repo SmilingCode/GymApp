@@ -1,8 +1,13 @@
 const queryReducer = (state = {
+    // show or hide component
     queryState: null,
+    // response of user searching
     queryRes: [],
+    // current page date
     pageId: 0,
+    // user clicked food item info
     currentFoodInfo: {},
+    // all food items that user added in
     userFoodList: []
 }, action) => {
     switch(action.type) {

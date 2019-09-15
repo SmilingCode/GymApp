@@ -1,5 +1,6 @@
 import React from 'react'
 
+// add food button
 function AddFood(props) {
     return (
         <div className="addFood">

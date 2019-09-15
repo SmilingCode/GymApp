@@ -13,7 +13,7 @@ class FoodDetail extends React.Component {
         this.handleMealChange = this.handleMealChange.bind(this);
         this.handleReset = this.handleReset.bind(this);
     }
-
+    // when user clicked plus serving
     increaseServing() {
         this.setState({
             serving: this.state.serving + 1,
@@ -21,7 +21,7 @@ class FoodDetail extends React.Component {
             calories: this.props.currentFoodDetail.calories * (this.state.serving + 1)
         })
     }
-
+    // when user clicked deduct serving
     decreaseServing() {
         if (this.state.serving > 1) {
             this.setState({
@@ -31,7 +31,7 @@ class FoodDetail extends React.Component {
             })
         }
     }
-
+    // bind select box value
     handleMealChange(e) {
         const {name, value} = e.target;
 
@@ -39,7 +39,7 @@ class FoodDetail extends React.Component {
             [name]: value
         })
     }
-
+    // store user added food
     storeUserInfo() {
         const foodDetails = {
             food_name: this.props.currentFoodDetail.foodName,
@@ -55,7 +55,7 @@ class FoodDetail extends React.Component {
         this.handleReset();
         this.props.setQueryState(false);
     }
-
+    // reset form and state
     handleReset() {
         setTimeout(() => {
             this.setState({
@@ -68,7 +68,6 @@ class FoodDetail extends React.Component {
     }
 
     render() {
-
         return (
             <div className="modal fade" aria-hidden="true" role="dialog" id="foodDetail">
                 <div className="modal-dialog">

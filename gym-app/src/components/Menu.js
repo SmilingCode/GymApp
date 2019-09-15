@@ -22,9 +22,10 @@ class Menu extends Component {
         let currentPageId = this.props.currentPageId;
         let menuList;
 
+        // Page today
         if (currentPageId === 0) {
+            // userFoodList is all the data user added in our state
             let userFoodList = this.props.userFoodList;
-            console.log(userFoodList)
 
             if (userFoodList) {
                 menuList = userFoodList.map((li, index) => {
@@ -48,6 +49,7 @@ class Menu extends Component {
                 })
             }
         } else {
+            // currentPageId decides we take yesterday data or before yesterday data
             let list = this.props.mockData.data_points[currentPageId].intake_list;
 
             menuList = list.map((li, index) => {
@@ -74,9 +76,7 @@ class Menu extends Component {
         return (
             <div className="menu">
                 <div className="cover" style={isDisplay}></div>
-
                 { menuList }
-
             </div>
         );
     }

@@ -24,45 +24,43 @@ const mapDispatchToProps = (dispatch) => ({
     userFoodDetail: (foodDetail) => dispatch(user_food_detail(foodDetail))
 })
 
-class Main extends React.Component {
+function Main(props) {
 
-    render() {
-        return (
-            <div className="container">
-                <Header
-                    isShowList={this.props.queryReducer.queryState}
-                    getQueryState={this.props.getQueryState}
-                    getQueryRes={this.props.getQueryRes}
-                    pageMoveLeft={this.props.pageMoveLeft}
-                    pageMoveRight={this.props.pageMoveRight}
-                    currentPageId={this.props.queryReducer.pageId}
-                    queryRes={this.props.queryReducer.queryRes}
-                    currentFoodInfo={this.props.currentFoodInfo}
-                />
-                <PersonalInfo
-                    isShowList={this.props.queryReducer.queryState}
-                    mockData={this.props.mockReducer}
-                    currentPageId={this.props.queryReducer.pageId}
-                    userFoodList={this.props.queryReducer.userFoodList}
-                />
-                <Menu
-                    isShowList={this.props.queryReducer.queryState}
-                    mockData={this.props.mockReducer}
-                    currentPageId={this.props.queryReducer.pageId}
-                    userFoodList={this.props.queryReducer.userFoodList}
-                />
-                <AddFood />
-                <FoodDetail
-                    currentFoodDetail={this.props.queryReducer.currentFoodInfo}
-                    userFoodDetail={this.props.userFoodDetail}
-                    setQueryState={this.props.getQueryState}
-                />
-                {
-                    this.props.queryReducer.queryState ? <SearchList queryRes={this.props.queryReducer.queryRes} currentFoodInfo={this.props.currentFoodInfo} /> : <div></div>
-                }
-            </div>
-        )
-    }
+    return (
+        <div className="container">
+            <Header
+                isShowList={props.queryReducer.queryState}
+                getQueryState={props.getQueryState}
+                getQueryRes={props.getQueryRes}
+                pageMoveLeft={props.pageMoveLeft}
+                pageMoveRight={props.pageMoveRight}
+                currentPageId={props.queryReducer.pageId}
+                queryRes={props.queryReducer.queryRes}
+                currentFoodInfo={props.currentFoodInfo}
+            />
+            <PersonalInfo
+                isShowList={props.queryReducer.queryState}
+                mockData={props.mockReducer}
+                currentPageId={props.queryReducer.pageId}
+                userFoodList={props.queryReducer.userFoodList}
+            />
+            <Menu
+                isShowList={props.queryReducer.queryState}
+                mockData={props.mockReducer}
+                currentPageId={props.queryReducer.pageId}
+                userFoodList={props.queryReducer.userFoodList}
+            />
+            <AddFood />
+            <FoodDetail
+                currentFoodDetail={props.queryReducer.currentFoodInfo}
+                userFoodDetail={props.userFoodDetail}
+                setQueryState={props.getQueryState}
+            />
+            {
+                props.queryReducer.queryState ? <SearchList queryRes={props.queryReducer.queryRes} currentFoodInfo={props.currentFoodInfo} /> : <div></div>
+            }
+        </div>
+    )
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

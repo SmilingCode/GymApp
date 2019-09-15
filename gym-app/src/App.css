@@ -191,13 +191,13 @@
   }
 
   .personalInfo {
-  position: fixed;
-  top: 96px;
-  left: 0;
-  width: 35%;
-  background: #F5F5F5;
-  height: 100%;
-}
+    position: fixed;
+    top: 96px;
+    left: 0;
+    width: 35%;
+    background: #F5F5F5;
+    height: 100%;
+  }
 
 .weight {
   position: absolute;

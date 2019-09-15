@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 
+// the default value for progress bar
 const barHeight = {
     height: '5px',
     margin: '10px'
@@ -23,7 +24,7 @@ class PersonalInfo extends Component {
             };
         }
 
-        // change the correspondant value when page id change
+        // Change the correspondant value when page id change
         let totalConsumed = 0,
             breakfast = 0,
             lunch = 0,
@@ -32,6 +33,7 @@ class PersonalInfo extends Component {
             percentage = 0;
         let currentPageId = this.props.currentPageId;
 
+        // Page today
         if (currentPageId === 0) {
             totalConsumed = 0;
             breakfast = 0;
@@ -39,8 +41,9 @@ class PersonalInfo extends Component {
             dinner = 0;
             snack = 0;
 
+            // userFoodList is all the data user added in our state
             let userFoodList = this.props.userFoodList;
-            console.log(userFoodList)
+            //console.log(userFoodList)
 
             if (userFoodList) {
                 userFoodList.map((li, index) => {
@@ -58,25 +61,28 @@ class PersonalInfo extends Component {
                 })
             }
         } else {
+            // list is our mock data, get from local mockData.js file
             let list = this.props.mockData.data_points[currentPageId].intake_list;
 
-            list.map((li, index) => {
-                let sum = li.nf_calories * li.serving_size * li.serving_qty;
+            if (list) {
+                list.map((li, index) => {
+                    let sum = li.nf_calories * li.serving_size * li.serving_qty;
 
-                if (li.meal_type === 'breakfast') {
-                    breakfast += sum;
-                } else if (li.meal_type === 'lunch') {
-                    lunch += sum;
-                } else if (li.meal_type === 'dinner') {
-                    dinner += sum;
-                } else if (li.meal_type === 'snack') {
-                    snack += sum;
-                }
+                    if (li.meal_type === 'breakfast') {
+                        breakfast += sum;
+                    } else if (li.meal_type === 'lunch') {
+                        lunch += sum;
+                    } else if (li.meal_type === 'dinner') {
+                        dinner += sum;
+                    } else if (li.meal_type === 'snack') {
+                        snack += sum;
+                    }
 
-                totalConsumed += sum;
-            });
+                    totalConsumed += sum;
+                });
+            }
         }
-
+        // Calculate percentage to update progress bar
         let ratio = Math.round((totalConsumed/1500)*100);
         percentage = (ratio > 100) ? 100 : parseInt(ratio);
 
