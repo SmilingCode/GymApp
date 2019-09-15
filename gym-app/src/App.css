@@ -104,7 +104,7 @@
   }
 
   .modal-dialog {
-    margin: 1.5rem;
+    margin: 1.5rem !important;
   }
 
   .menu {
@@ -166,13 +166,13 @@
   .carousel-control-prev {
     height: 20px;
     top: 24% !important;
-    z-index: 9999;
+    z-index: 1;
   }
 
   .carousel-control-next {
     height: 20px;
     top: 24% !important;
-    z-index: 9999;
+    z-index: 1;
   }
 }
 
@@ -243,7 +243,7 @@
 
 .meals {
   margin-top: 20px;
-  padding-left: 20px;
+  padding-left: 8%;
 }
 
 .food-image {
@@ -311,14 +311,14 @@
     height: 20px;
     top: 9% !important;
     left: 28% !important;
-    z-index: 9999;
+    z-index: 99;
   }
 
   .carousel-control-next {
     height: 20px;
     right: 28% !important;
     top: 9% !important;
-    z-index: 9999;
+    z-index: 99;
   }
 }
 
@@ -649,7 +649,7 @@ div.itemCategory h5 {
   margin: 0;
   border-radius: 3px;
   text-indent: 10px;
-  width: 17.4em;
+  width: 18em;
   font-weight: 600;
   -webkit-appearance: button; /* hide default arrow in chrome OSX */
 }
