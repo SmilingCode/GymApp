@@ -75,8 +75,6 @@ class PersonalInfo extends Component {
 
                 totalConsumed += sum;
             });
-
-
         }
 
         let ratio = Math.round((totalConsumed/1500)*100);
@@ -94,24 +92,22 @@ class PersonalInfo extends Component {
             <div className="personalInfo">
                 <div className="cover" style={isDisplay}></div>
                 <div className="row user-info">
-                    <div className="col-sm-4">
+                    <div className="col-2 col-sm-4">
                         <div className="circle-block weight">
                             <h6 className="c-font">{this.props.mockData.weight_kg}</h6>
                             <p className="c-unit">kg</p>
                         </div>
                     </div>
-                    <div className="col-sm-4">
-                        <img src="alberto.png" width="92" height="92" className="circle-img" alt=""/>
+                    <div className="col-2 col-sm-4">
+                        <img src="portrait.jpg" width="92" height="92" className="circle-img" alt=""/>
                     </div>
-                    <div className="col-sm-4">
+                    <div className="col-2 col-sm-4">
                         <div className="circle-block height">
                             <h6 className="c-font">{this.props.mockData.height_cm}</h6>
                             <p className="c-unit">cm</p>
                         </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col-sm-12 text-center">
+                    <div className="col-4 col-sm-12 text-center">
                         {this.props.mockData.first_name} {this.props.mockData.last_name}
                     </div>
                 </div>
