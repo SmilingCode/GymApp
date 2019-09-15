@@ -44,13 +44,13 @@ class FoodDetail extends React.Component {
         const foodDetails = {
             food_name: this.props.currentFoodDetail.foodName,
             serving_unit: this.props.currentFoodDetail.unit,
-            totalGrams: this.state.grams,
-            totalCalories: this.state.calories,
+            totalGrams: this.state.grams ? this.state.grams : this.props.currentFoodDetail.grams,
+            totalCalories: this.state.calories ? this.state.calories : this.props.currentFoodDetail.calories,
             thumb: this.props.currentFoodDetail.image,
             meal_type: this.state.meal_type,
             serving_size: this.state.serving
         }
-
+        console.log(this.state.grams)
         this.props.userFoodDetail(foodDetails)
         this.handleReset();
         this.props.setQueryState(false);

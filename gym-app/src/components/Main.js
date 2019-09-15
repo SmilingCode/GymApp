@@ -4,6 +4,7 @@ import PersonalInfo from './PersonalInfo';
 import Menu from './Menu';
 import AddFood from './AddFood';
 import FoodDetail from './FoodDetail';
+import SearchList from './SearchList';
 import { connect } from 'react-redux';
 import { get_query_state, get_query_res, page_move_left, page_move_right, current_food_detail, user_food_detail } from '../redux/actions/index';
 
@@ -56,6 +57,9 @@ class Main extends React.Component {
                     userFoodDetail={this.props.userFoodDetail}
                     setQueryState={this.props.getQueryState}
                 />
+                {
+                    this.props.queryReducer.queryState ? <SearchList queryRes={this.props.queryReducer.queryRes} currentFoodInfo={this.props.currentFoodInfo} /> : <div></div>
+                }
             </div>
         )
     }
