@@ -87,7 +87,7 @@ class PersonalInfo extends Component {
         percentage = (ratio > 100) ? 100 : parseInt(ratio);
 
         const textMargin = {
-            marginLeft: percentage < 10 ? (percentage + 5) + '%' : (percentage - 10) + '%'
+            marginLeft: percentage < 20 ? (percentage + 5) + '%' : (percentage - 10) + '%'
         }
 
         const barWidth = {
@@ -95,74 +95,74 @@ class PersonalInfo extends Component {
         };
 
         return (
-            <div className="personalInfo">
-                <div className="cover" style={isDisplay}></div>
-                <div className="row user-info">
-                    <div className="col-2 col-sm-4 min-weight">
-                        <div className="circle-block weight">
-                            <h6 className="c-font">{this.props.mockData.weight_kg}</h6>
-                            <p className="c-unit">kg</p>
-                        </div>
-                    </div>
-                    <div className="col-2 col-sm-4 img">
-                        <img src="portrait.jpg" width="92" height="92" className="circle-img" alt=""/>
-                    </div>
-                    <div className="col-2 col-sm-4">
-                        <div className="circle-block height">
-                            <h6 className="c-font">{this.props.mockData.height_cm}</h6>
-                            <p className="c-unit">cm</p>
-                        </div>
-                    </div>
-
-                    <div className="col-4 col-sm-12 text-center name">
-                        <span className="first_name">{this.props.mockData.first_name}</span> <span className="d-none d-sm-block last_name">{this.props.mockData.last_name}</span>
-                    </div>
-                </div>
-                <hr />
-                <div className="row justify-content-between daily-panel">
-                    <div className="col-5 col-sm-5">
-                        <div className="consumed">
-                            <h4>{Math.round(totalConsumed)} cal</h4>
-                            <h6>consumed</h6>
-                        </div>
-                    </div>
-                    <div className="col-7 col-sm-5">
-                        <div className="goal">
-                            <h4>{this.props.mockData.daily_goal} cal</h4>
-                            <h6>daily goal</h6>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-11 col-sm-12">
-                        <div className="progress" style={barHeight}>
-                            <div className="progress-bar bg-purple"
-                                role="progressbar"
-                                style={barWidth}
-                                aria-valuenow={percentage}
-                                aria-valuemin="0"
-                                aria-valuemax="100">
+            <div className="user-panel">
+                <div className="container">
+                    <div className="cover" style={isDisplay}></div>
+                    <div className="row justify-content-md-center user-info-row">
+                        <div className="col-12">
+                            <div className="user-info">
+                                <div className="d-md-none d-block firstname">Jane</div>
+                                <div className="weight grey-circle">
+                                    <h6>{this.props.mockData.weight_kg}</h6>
+                                    <span>kg</span>
+                                </div>
+                                <div className="image-circle">
+                                    <img src="portrait.jpg" className="img-circle" alt="portrait" />
+                                </div>
+                                <div className="height grey-circle">
+                                    <h6>{this.props.mockData.height_cm}</h6>
+                                    <span>cm</span>
+                                </div>
                             </div>
                         </div>
-                        <div className="percentage" style={textMargin}>{percentage + '%'}</div>
+                        <div className="d-none d-md-block user-name">
+                            <span className="firstname">{this.props.mockData.first_name}</span>
+                            <span className="lastname">{this.props.mockData.last_name}</span>
+                        </div>
                     </div>
-                </div>
-                <div className="row meals">
-                    <div className="col-sm-3">
-                        <h5>{ Math.round(breakfast) }</h5>
-                        <p>Breakfast</p>
+                    <div className="row justify-content-between user-data">
+                        <div className="consumed">
+                            <h4>{Math.round(totalConsumed)} cal</h4>
+                            <span>consumed</span>
+                        </div>
+                        <div className="goal">
+                            <h4>{this.props.mockData.daily_goal} cal</h4>
+                            <span>daily goal</span>
+                        </div>
                     </div>
-                    <div className="col-sm-2">
-                        <h5>{ Math.round(lunch) }</h5>
-                        <p>Lunch</p>
+                    <div className="row">
+                        <div className="col-md-12 pl-md-0 pr-md-0">
+                            <div className="progress" style={barHeight}>
+                                <div className="progress-bar bg-purple"
+                                    role="progressbar"
+                                    style={barWidth}
+                                    aria-valuenow={percentage}
+                                    aria-valuemin="0"
+                                    aria-valuemax="100">
+                                </div>
+                            </div>
+                            <div className="percentage" style={textMargin}>{percentage + '%'}</div>
+                        </div>
                     </div>
-                    <div className="col-sm-2">
-                        <h5>{ Math.round(dinner) }</h5>
-                        <p>Dinner</p>
-                    </div>
-                    <div className="col-sm-2">
-                        <h5>{ Math.round(snack) }</h5>
-                        <p>Snack</p>
+                    <div className="row justify-content-center user-meal">
+                        <div className="col-11 col-md-10 text-center meal">
+                            <div className="breakfast">
+                                <h6>{ Math.round(breakfast) }</h6>
+                                <span>Breakfast</span>
+                            </div>
+                            <div className="lunch">
+                                <h6>{ Math.round(lunch) }</h6>
+                                <span>Lunch</span>
+                            </div>
+                            <div className="dinner">
+                                <h6>{ Math.round(dinner) }</h6>
+                                <span>Dinner</span>
+                            </div>
+                            <div className="snack">
+                                <h6>{ Math.round(snack) }</h6>
+                                <span>Snack</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

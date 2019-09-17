@@ -27,7 +27,7 @@ const mapDispatchToProps = (dispatch) => ({
 function Main(props) {
 
     return (
-        <div className="container">
+        <div className="main">
             <Header
                 isShowList={props.queryReducer.queryState}
                 getQueryState={props.getQueryState}

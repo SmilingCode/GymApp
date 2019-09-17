@@ -1,434 +1,347 @@
-/*
-  @media css
-*/
 @media screen and (max-width: 768px) {
-  .header {
-    height: 140px;
-    display: block;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    background: #6200ee;
-    padding: 5px;
-  }
+    #navi {
+        height: 9em;
+    }
 
-  .date {
-    margin-top: 105px;
-  }
+    .carousel-control-next, .carousel-control-prev {
+        color: #6200ee !important;
+    }
 
-  .time-control {
-    color: #000000de !important;
-    font-size: 22px;
-    font-weight: 500;
-    letter-spacing: 0.25px;
-    text-align: center;
-  }
+    .user-panel {
+        width: 100%;
+    }
 
-  .carousel-control-next, .carousel-control-prev {
-    color: #000 !important;
-  }
+    .user-data {
+        margin-top: 15%;
+    }
 
-  .personalInfo {
-    width: 100%;
-    background: transparent;
-    position: absolute;
-    margin-top: 42px;
-  }
+    .food-list {
+        width: 100%;
+        border-top: 1px solid #d3d3d3;
+    }
 
-  .daily-panel {
-    margin-top: 70px;
-  }
+    .image-circle {
+        margin: 21px 3% 0 0;
+        order: 1;
+    }
 
-  .img img {
-    height: 56px;
-    width: 56px;
-  }
+    .user-info {
+        display: flex;
+    }
 
-  div.user-info {
-    display: flex;
-  }
+    .user-info > div.firstname {
+        margin-top: 32px;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 400;
+        order: 2;
+    }
 
-  div.user-info div:nth-child(1) {
-    order: 3;
-  }
-  div.user-info div:nth-child(2) {
-    order: 1;
-  }
-  div.user-info div:nth-child(3) {
-    order: 4;
-  }
-  div.user-info div:nth-child(4) {
-    order: 2;
-  }
+    .weight {
+        margin-left: 24%;
+    }
 
-  div.user-info .name {
-    font-weight: 500;
-    color: #fff;
-    font-size: 24px;
-  }
+    .height {
+        margin-left: 4%;
+    }
 
-  .min-weight {
-    margin-right: 10px;
-  }
+    .grey-circle {
+        background: #300076;
+        border-radius: 100%;
+        width: 56px;
+        height: 56px;
+        text-align: center;
+        color: #ffffff;
+        padding-top: 8px;
+        margin-top: 25px;
+        order: 3;
+    }
 
-  .goal {
-    text-align: right;
-    margin-right: 38px;
-  }
+    .img-circle {
+        border-radius: 100%;
+        width: 60px;
+        height: 60px;
+    }
 
-  .goal h6 {
-    font-size: 12px;
-    color: #00000099;
-  }
+    .food-image {
+        width: 20%;
+    }
 
-  .meals {
-    padding-left: 8px;
-  }
+    .user-meal {
+        margin-bottom: 6%;
+    }
 
-  .meals div {
-    width: 20%;
-    float: left;
-  }
+    .consumed {
+        margin: 10px 0 10px 7%;
+    }
 
-  .searchList {
-    position: fixed;
-    left: 2%;
-    top: 8%;
-    width: 96%;
-    height: 91%;
-    background: #ffffff;
-    z-index: 2;
-    border-radius: 1%;
-    overflow-x: scroll;
-  }
+    .goal {
+        margin: 10px 7% 10px 0;
+    }
 
-  .modal-dialog {
-    margin: 1.5rem !important;
-  }
+    .user-info-row {
+        position: absolute;
+        top: 7%;
+        width: 100%;
+    }
 
-  .menu {
-    position: fixed;
-    top: 60%;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    overflow-x: scroll;
-    margin-top: -5px;
-    border-top: 1px solid #d3d3d3;
-  }
+    .carousel-text {
+        position: relative;
+        top: 100px;
+        color: #000;
+        font-size: 28px;
+        font-weight: 400;
+    }
 
-  .food-image {
-    width: 7%;
-    margin-left: 0;
-    display: flex;
-    align-items: center;
-    height: 48px;
-  }
+    .modal-dialog {
+        margin: 1.5rem !important;
+    }
 
-  .food-item {
-    padding-left: 30px;
-  }
-
-  .food-info {
-    width: 84%;
-    height: 54px;
-    margin-left: 30px;
-    border-bottom: 1px solid #d3d3d3;
-  }
-
-  .first_name {
-    display: block;
-    margin: 8px 0 0 -40px;
-  }
-
-  .circle-block {
-    background: #300076;
-    border-radius: 100%;
-    width: 56px;
-    height: 56px;
-    text-align: center;
-    color: #ffffff;
-    padding: 7px;
-    top: 20px;
-  }
-
-  .cover {
-    width: 105%;
-    height: 100%;
-    background: rgba(0, 0, 0, .5);
-    position: fixed;
-    left: -5%;
-    top: 0;
-    z-index: 1;
-  }
-
-  .carousel-control-prev {
-    height: 20px;
-    top: 24% !important;
-    z-index: 1;
-  }
-
-  .carousel-control-next {
-    height: 20px;
-    top: 24% !important;
-    z-index: 1;
-  }
+    .searchList {
+        position: fixed;
+        left: 2%;
+        top: 8%;
+        width: 96%;
+        height: 91%;
+        background: #ffffff;
+        z-index: 2;
+        border-radius: 1%;
+        overflow-x: scroll;
+    }
 }
 
-/*
-  main wrapper
-*/
 @media screen and (min-width: 768px) {
-  .header {
-    display: block;
-    position: fixed;
-    left: 0;
-    top: 0;
+    .user-panel {
+        float: left;
+        width: 35%;
+        background: #F5F5F5;
+    }
+
+    .carousel-text {
+        font-size: 32px;
+        color: #fff;
+        margin: 7px 0;
+        font-weight: 300;
+    }
+
+    .food-list {
+        float: left;
+        width: 65%;
+    }
+
+    .food-ul {
+        cursor: pointer;
+    }
+
+    .grey-circle {
+        background: #7A7A7A;
+        border-radius: 100%;
+        width: 56px;
+        height: 56px;
+        text-align: center;
+        color: #ffffff;
+        padding-top: 8px;
+        margin-top: 25px;
+    }
+
+    .image-circle {
+        margin: 16px 40px 0 40px;
+    }
+
+    .img-circle {
+        border-radius: 100%;
+        width: 92px;
+        height: 92px;
+    }
+
+    .user-info-row {
+        border-bottom: 1px solid #d3d3d3;
+    }
+
+    .user-info {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+
+    .food-image {
+        width: 12%;
+    }
+
+    .user-meal {
+        padding-bottom: 76%;
+    }
+
+    .consumed {
+        margin: 18px 0 10px 15px;
+    }
+
+    .goal {
+        margin: 18px 15px 10px 0;
+    }
+
+    .searchList {
+        position: fixed;
+        left: 34%;
+        top: 8%;
+        width: 32%;
+        height: 91%;
+        background: #ffffff;
+        z-index: 2;
+        border-radius: 1%;
+        overflow-x: scroll;
+    }
+}
+
+.main {
     width: 100%;
-    background: #6200ee;
-    padding: 5px;
-  }
-
-  .personalInfo {
-    position: fixed;
-    top: 96px;
-    left: 0;
-    width: 35%;
-    background: #F5F5F5;
     height: 100%;
-  }
-
-.weight {
-  position: absolute;
-  right: 0;
+    margin: 0 auto;
 }
 
-.height {
-  position: absolute;
-  left: 0;
+#navi {
+    background: #6200ee;
 }
 
-.goal {
-  text-align: right;
-  padding-right: 15px;
-}
-
-.goal h6 {
-  font-size: 12px;
-  color: #00000099;
-}
-
-.searchList {
-  position: fixed;
-  left: 34%;
-  top: 8%;
-  width: 32%;
-  height: 91%;
-  background: #ffffff;
-  z-index: 2;
-  border-radius: 1%;
-  overflow-x: scroll;
-}
-
-.menu {
-  position: fixed;
-  top: 96px;
-  left: 35%;
-  width: 65%;
-  height: 100%;
-  overflow-x: scroll;
-  margin-top: -5px;
-}
-
-.meals {
-  margin-top: 20px;
-  padding-left: 8%;
-}
-
-.food-image {
-  width: 7%;
-  margin-left: 30px;
-  display: flex;
-  align-items: center;
-  height: 48px;
-}
-
-.food-info {
-  width: 84%;
-  height: 54px;
-  margin-left: 15px;
-  border-bottom: 1px solid #d3d3d3;
-}
-
-.name {
-  overflow: hidden;
-  width: 100%;
-  justify-content: center;
-  display: flex;
-}
-
-.name span {
-  display: block;
-  float: left;
-  font-size: 24px;
-  color: #000000de;
-  font-weight: 500;
-}
-
-.name .last_name {
-  margin-left: 5px;
-}
-
-.time-control {
-  text-align: center;
-  color: #ffffff;
-  font-size: 32px;
-}
-
-.circle-block {
-  background: #7A7A7A;
-  border-radius: 100%;
-  width: 56px;
-  height: 56px;
-  text-align: center;
-  color: #ffffff;
-  padding: 7px;
-  top: 20px;
-}
-
-.cover {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, .5);
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
-}
-
-.carousel-control-prev {
-    height: 20px;
-    top: 9% !important;
-    left: 28% !important;
-    z-index: 99;
-  }
-
-  .carousel-control-next {
-    height: 20px;
-    right: 28% !important;
-    top: 9% !important;
-    z-index: 99;
-  }
-}
-
-
-
-/*
-  header
-*/
-div.searchBox {
-  z-index: 2;
-}
-div.searchBox form {
-  position: relative;
+.searchForm {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
 }
 
 .icon {
-  position: absolute;
-  margin: 10px;
+    position: absolute;
+    left: 8%;
+    top: 37%;
 }
 
-.form-control {
-  padding-left: 40px !important;
+.searchBox {
+    padding-left: 13% !important;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    opacity: 1 !important;
 }
 
 /*
-  user panel
+    user-panel
 */
-.user-info {
-  margin-top: 20px;
-  margin-bottom: 5px;
+
+.grey-circle h6 {
+    margin: 0;
 }
 
-.circle-img {
-  border-radius: 100%;
-  width: 92px;
-  height: 92px;
-  margin: 0;
-  padding: 0;
-  display: block;
-  margin: 0 auto;
+.grey-circle span {
+    font-size: 12px;
+    font-weight: 100;
+    display: block;
 }
 
-.c-font {
-  font-size: 20px;
-  margin: 0;
+.user-info div {
+    float: left;
 }
 
-.c-unit {
-  font-size: 12px;
+.user-name {
+    margin-bottom: 10px;
+}
+
+.user-name span {
+    font-size: 24px;
+    color: #000000de;
+    margin-bottom: 10px;
+}
+
+.consumed h4, .goal h4 {
+    margin: 0;
+    font-weight: 400;
+}
+
+.consumed span, .goal span {
+    font-size: 12px;
+    color: #00000099;
+    display: block;
 }
 
 .bg-purple {
-  background: #6200ee !important;
+    background: #6200ee !important;
 }
 
 .percentage {
-  margin-left: 22%;
   color: #00000099;
 }
 
-.consumed {
-  padding-left: 15px;
+.meal {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-.consumed h6 {
-  font-size: 12px;
-  color: #00000099;
+.meal div {
+    float: left;
+    margin: 0 6%;
 }
 
-.meals div {
-  text-align: center;
-  padding: 0;
-  margin: 4px;
+.meal div h6 {
+    margin: 0;
 }
 
-.meals div:first-child {
-  padding-left: 15px;
+.meal div span {
+    font-size: 12px;
+    color: #00000099;
+    display: block;
 }
-
-.meals div p {
-  font-size: 12px;
-  color: #00000099;
-}
-
-.meals div h5 {
-  margin: 0;
-}
-
 /*
-  Food list
+    food-list
 */
-.food-item {
-  margin-top: 12px;
-  height: 48px;
+.food-list {
+    overflow-x: scroll;
 }
 
-.food-item p {
-  font-size: 12px;
+.food-item {
+    display: flex;
+}
+
+.food-item > div {
+    margin-top: 10px;
+}
+
+.food-info {
+    width: 88%;
+    border-bottom: 1px solid #d3d3d3;
 }
 
 .food-name {
-  width: 60%;
-  float: left;
-  overflow: hidden;
+    width: 60%;
+    float: left;
+    overflow: hidden;
 }
 
 .food-energy {
-  text-align: right;
-  padding-right: 25px;
-  float: right;
+    text-align: right;
+    padding-right: 25px;
+    float: right;
+}
+
+.bigger-font {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.15px;
+    color: #000000de;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+}
+
+.sub-font {
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: 0.25px;
+    color: #00000099;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 /*
@@ -464,72 +377,6 @@ div.searchBox form {
 }
 
 /*
-  searchList
-*/
-.common {
-  border-bottom: 1px solid #d3d3d3;
-  padding-bottom: 10px;
-}
-
-.searchItem {
-  width: 100%;
-  margin-top: 10px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.search-image {
-  width: 13%;
-  float: left;
-  margin-left: 10px;
-}
-
-.search-name {
-  width: 79%;
-  float: left;
-  margin: 14px 0 0 13px;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.common a:not(:last-child) div.search-name {
-  border-bottom: 1px solid #d3d3d3;
-  padding-bottom: 16px;
-}
-
-.branded div.search-name {
-  border-bottom: 1px solid #d3d3d3;
-  padding-bottom: 10px;
-}
-
-.searchList h5 {
-  color: #00000099;
-  font-size: 14px;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-.search-name h6 {
-  font-weight: 500;
-  font-size: 14px;
-  margin: 0;
-}
-
-.search-name span {
-  font-size: 12px;
-  color: #00000099;
-}
-
-/*
-  carousel-control-prev
-*/
-.carousel-control-next, .carousel-control-prev {
-  opacity: 1 !important;
-}
-
-/*
   foodDetail
 */
 .foodDetail {
@@ -551,10 +398,6 @@ div.searchBox form {
 .savings, .grams, .calories {
   position: relative;
   float: left;
-}
-
-.itemVals div.savings {
-
 }
 
 .itemVals div.grams {
@@ -587,6 +430,11 @@ div.searchBox form {
   color: #00000099;
   width: 10px;
   line-height: 1;
+}
+
+.icons i.fa {
+  font-size: 10px !important;
+  cursor: pointer;
 }
 
 div.savingVal h6 {
@@ -630,9 +478,29 @@ div.itemCategory h5 {
 }
 
 /*
-  custom select
+    modal
 */
 
+.modal {
+  top: 15% !important;
+}
+
+.modal-dialog {
+  max-width: 323px !important;
+}
+
+.modal-header {
+  border: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.modal-body {
+  padding-top: 0 !important;
+}
+
+/*
+  custom select
+*/
 /* Custom dropdown */
 .custom-dropdown {
   position: relative;
@@ -701,46 +569,61 @@ div.itemCategory h5 {
   cursor: pointer;
 }
 
-.icons i.fa {
-  font-size: 10px !important;
+/*
+  searchList
+*/
+.common {
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 10px;
+}
+
+.searchItem {
+  width: 100%;
+  margin-top: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 
-.modal {
-  top: 15% !important;
+.search-image {
+  width: 13%;
+  float: left;
+  margin-left: 10px;
 }
 
-.modal-dialog {
-  max-width: 323px !important;
-}
-
-.modal-header {
-  border: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.modal-body {
-  padding-top: 0 !important;
-}
-
-.bigger-font {
-  font-size: 16px;
+.search-name {
+  width: 79%;
+  float: left;
+  margin: 14px 0 0 13px;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.15px;
-  color: #000000de;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: block;
 }
 
-.sub-font {
-  font-size: 14px;
-  line-height: 1.43;
-  letter-spacing: 0.25px;
+.common a:not(:last-child) div.search-name {
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 16px;
+}
+
+.branded div.search-name {
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 10px;
+}
+
+.searchList h5 {
   color: #00000099;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.search-name h6 {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+}
+
+.search-name span {
+  font-size: 12px;
+  color: #00000099;
 }

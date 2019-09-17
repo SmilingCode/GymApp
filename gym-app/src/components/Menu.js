@@ -30,18 +30,24 @@ class Menu extends Component {
             if (userFoodList) {
                 menuList = userFoodList.map((li, index) => {
                     return (
-                        <div key={index} className="row food-item">
-                            <div className="food-image">
-                                <img src={li.thumb} width="40" height="40" alt=""/>
-                            </div>
-                            <div className="food-info">
-                                <div className="food-name">
-                                    <span className="bigger-font">{li.food_name}</span>
-                                    <p className="sub-font">{li.serving_size} {li.serving_unit} ({li.totalGrams + 'g'})</p>
+                        <div key={index} className="row food-ul">
+                            <div className="col-12 mr-0 pr-0 food-item">
+                                <div className="food-image">
+                                    <img src={li.thumb} width="40" height="40" alt=""/>
                                 </div>
-                                <div className="food-energy">
-                                    <span className="bigger-font">{li.totalCalories} cal</span>
-                                    <p className="sub-font">{li.meal_type}</p>
+                                <div className="food-info">
+                                    <div className="food-name">
+                                        <span className="bigger-font">{li.food_name}</span>
+                                        <p className="sub-font">
+                                            {li.serving_size} {li.serving_unit} ({ Math.round(li.totalGrams) + 'g' })
+                                        </p>
+                                    </div>
+                                    <div className="food-energy">
+                                        <span className="bigger-font">
+                                            { Math.round(li.serving_size * li.totalCalories) } cal
+                                        </span>
+                                        <p className="sub-font">{li.meal_type}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -54,18 +60,24 @@ class Menu extends Component {
 
             menuList = list.map((li, index) => {
                 return (
-                    <div key={index} className="row food-item">
-                        <div className="food-image">
-                            <img src={li.thumb} width="40" height="40" alt=""/>
-                        </div>
-                        <div className="food-info">
-                            <div className="food-name">
-                                <span className="bigger-font">{li.food_name}</span>
-                                <p className="sub-font">{li.serving_size} {li.serving_unit} ({li.serving_weight_grams + 'g'})</p>
+                    <div key={index} className="row food-ul">
+                        <div className="col-12 mr-0 pr-0 food-item">
+                            <div className="food-image">
+                                <img src={li.thumb} width="40" height="40" alt=""/>
                             </div>
-                            <div className="food-energy">
-                                <span className="bigger-font">{li.serving_size * li.nf_calories} cal</span>
-                                <p className="sub-font">{li.meal_type}</p>
+                            <div className="food-info">
+                                <div className="food-name">
+                                    <span className="bigger-font">{li.food_name}</span>
+                                    <p className="sub-font">
+                                        {li.serving_size} {li.serving_unit} ({ Math.round(li.serving_weight_grams) + 'g' })
+                                    </p>
+                                </div>
+                                <div className="food-energy">
+                                    <span className="bigger-font">
+                                        { Math.round(li.serving_size * li.nf_calories) } cal
+                                    </span>
+                                    <p className="sub-font">{li.meal_type}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -74,9 +86,11 @@ class Menu extends Component {
         }
 
         return (
-            <div className="menu">
-                <div className="cover" style={isDisplay}></div>
-                { menuList }
+            <div className="food-list">
+                <div className="container">
+                    <div className="cover" style={isDisplay}></div>
+                    { menuList }
+                </div>
             </div>
         );
     }
