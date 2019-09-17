@@ -12,7 +12,7 @@
     }
 
     .user-data {
-        margin-top: 15%;
+        margin-top: -33px;
     }
 
     .food-list {
@@ -27,6 +27,7 @@
 
     .user-info {
         display: flex;
+        justify-content: space-between;
     }
 
     .user-info > div.firstname {
@@ -80,9 +81,8 @@
     }
 
     .user-info-row {
-        position: absolute;
-        top: 7%;
-        width: 100%;
+        position: relative;
+        top: -100px;
     }
 
     .carousel-text {
