@@ -4,7 +4,7 @@
 
 This is a single page react App which can be recording user intakes of nutrition to help them reaching daily goals. All information are supplied by Nutritionix API(https://developer.nutritionix.com/docs/v2).
 
-**Website Demo:** https://gymassist.herokuapp.com
+**Website:** https://gymassist.herokuapp.com
 
 <br />
 
