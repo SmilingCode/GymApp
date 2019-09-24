@@ -26,23 +26,23 @@ This application mainly structured by 5 component: Header, UserPanel, FoodList, 
 
 ## Deploy
 
-If you don't have react environment, please install react first:
-```javascript
-npm install
-```
-
-Since you installed react, you can clone this repository now:
+you can clone this repository to your computer:
 ```javascript
 git clone https://github.com/SmilingCode/GymApp.git
 ```
 
-Before execute npm start, please have a look on the package.json file, make sure you have all those packages in your local environment.
+Install all devDependencies and dependencies packages.
 ```javascript
 npm install --save
 npm install --save-dev
 ```
 
+**Quick install:**
+```javascript
+npm install
+```
+
 In the end, run our application by executing:
 ```javascript
-npm start
+npm run start
 ```
